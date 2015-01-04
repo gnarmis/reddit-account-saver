@@ -76,7 +76,7 @@ function downloadAccountData(accountName) {
 
   $.when(
     $.getJSON(api.about.url, function(d){window.profile.about = d;}),
-    $.getJSON(api.overview.url, function(d){window.profile.overvie = d;}),
+    $.getJSON(api.overview.url, function(d){window.profile.overview = d;}),
     $.getJSON(api.submitted.url, function(d){window.profile.submitted = d;}),
     $.getJSON(api.comments.url, function(d){window.profile.comments = d;}),
     $.getJSON(api.saved.url, function(d){window.profile.saved = d;}),
