@@ -2,9 +2,13 @@
 
 Tools to help save data from your own reddit account.
 
-See `injectable_script.js`.
+## Automated Process
 
-Process:
+1. Log into Reddit on Chrome
+2. Open up the developer console
+3. Copy paste all of `auto_download_account_data.js`
+
+## Manual Process
 
 1. Log into Reddit on Chrome
 2. Open up the developer console
