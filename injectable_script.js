@@ -59,24 +59,6 @@ function Endpoint(accountName, resourceName) {
 function Api(accountName) {
   this.accountName = accountName;
 
-  this.resourceNames = ['about', 'overview', 'submitted', 'comments',
-    'saved', 'liked', 'disliked'];
-
-  this._makeEndpoints = function() {
-    // so you can't change context of the callback function in $.map() in
-    // jQuery? It always points to `window`? Whatever, I'll work around it
-    // while providing a referentially transparent surface.
-    window.accountName = this.accountName;
-    var out = $.map(this.resourceNames, function(item) {
-      return new Endpoint(window.accountName, item);
-    });
-    delete window.accountName; // put things back like they were
-    return out;
-  };
-
-  // all endpoints...
-  this.endpoints =this._makeEndpoints();
-
   this.about = new Endpoint(this.accountName, 'about');
   this.overview = new Endpoint(this.accountName, 'overview');
   this.submitted = new Endpoint(this.accountName, 'submitted');
@@ -100,5 +82,5 @@ function downloadAccountData(accountName) {
     $.getJSON(api.saved.url, function(d){window.profile.saved = d;}),
     $.getJSON(api.liked.url, function(d){window.profile.liked = d;}),
     $.getJSON(api.disliked.url, function(d){window.profile.disliked = d;})
-  ).done(function() {alert('Account data download! Inspect `window.profile`. To download, do `console.save(window.profile, "profile.json")`')});
+  ).done(function() {console.log('Account data download! Inspect `window.profile`. To download, do `console.save(window.profile, "profile.json")`')});
 };
