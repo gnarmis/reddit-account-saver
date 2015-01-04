@@ -2,9 +2,9 @@
 
 Tools to help save data from your own reddit account.
 
-## Automated Process
+Bookmarklet available on the [project website](https://gnarmis.github.io/reddit-account-saver).
 
-Use this bookmarklet while you're on Reddit.com (after logging in).
+## Automated Process
 
 1. Log into Reddit on Chrome
 2. Open up the developer console
